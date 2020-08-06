@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <header>
+            <button onClick="history.back()">Back</button>
+            {% if current_user.is_authenticated %}
+            <button><a style='text-decoration: none' href="/">HOME</a></button>
+            {% if username %}
+                <button><a style='text-decoration: none' href="/user/{{ username }}">{{ username }}</a></button>
+            {% else %}
+                <button><a style='text-decoration: none' href="/user/{{ current_user.name }}">{{ current_user.name }}</a></button>
+            {% endif %}
+            <button><a style='text-decoration: none' href="/user/">All users</a></button>
+            <button><a style='text-decoration: none' href="/restaurant/">All restaurants</a></button>
+            <button><a style='text-decoration: none' href="/logout/">Log out</a></button>
+            {% else %}
+            <button><a style='text-decoration: none' href="/login/">Log in</a></button>
+            <button><a style='text-decoration: none' href="/signup/">Sign up</a></button>
+            {% endif %}
+        </header>
+        <h1>Time Line</h1>
+        {% for report in reports %}
+        <div>
+            <p><a href="/user/{{ report.user.name }}">{{ report.user.name }}</a><br>
+            {{ report.created_at }}<br>
+            <a href="/restaurant/{{report.restaurant_id}}">{{ report.restaurant.name }}</a><br>
+            {% for i in range(report.score|int) %}
+            <div style='color:#ffaf01c6; display: inline-block;'>
+            ★
+            </div>
+            {% endfor %}
+            {% for i in range(5 - report.score|int) %}
+            <div style='color:gray; display: inline-block;'>
+                ★
+            </div>
+            {% endfor %}
+            {{ report.contents }}</p>
+            <hr>
+        </div>
+        {% endfor %}
+        <!-- <FORM>
+            <INPUT type="button" value="戻る" onClick="history.back()"><INPUT type="button" value="HOME" onclick="location.href='/'">
+        </FORM> -->
+    </body>
+</html>

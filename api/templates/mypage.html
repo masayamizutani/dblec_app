@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <header>
+            <button onClick="history.back()">Back</button>
+            {% if current_user.is_authenticated %}
+            <button><a style='text-decoration: none' href="/">HOME</a></button>
+            <button><a style='text-decoration: none' href="/user/{{ current_user.name }}">{{ current_user.name }}</a></button>
+            <button><a style='text-decoration: none' href="/user/">All users</a></button>
+            <button><a style='text-decoration: none' href="/restaurant/">All restaurants</a></button>
+            <button><a style='text-decoration: none' href="/logout/">Log out</a></button>
+            {% else %}
+            <button><a style='text-decoration: none' href="/login/">Log in</a></button>
+            <button><a style='text-decoration: none' href="/signup/">Sign up</a></button>
+            {% endif %}
+        </header>
+        <div>
+            {% if username == login_user %}
+            <h1>mypage: {{username}}</h1>
+            {% else %}
+            <h1>{{username}}</h1>
+            {% endif %}
+        </div>
+        <div>
+            <h2>User Info</h2><br>
+        follow: <a href="/user/{{username}}/following">{{cnt_follower}}</a><br>
+        follewer: <a href="/user/{{username}}/followed">{{cnt_followed}}</a>
+        {% if username != login_user %}
+        {% if is_follow %}
+        <h4><font color="#4169e1">Following</font></h4><br>
+        <form action="/unfollow/" method="post">
+            <input type="hidden" name="follower_id" value={{ myid }}>
+            <input type="hidden" name="inverse_follower_id" value={{ uid }}>
+            <input type="submit" value="フォロー解除">
+        </form>    
+        {% else %}
+        <form action="/follow/" method="post">
+            <input type="hidden" name="follower_id" value={{ myid }}>
+            <input type="hidden" name="inverse_follower_id" value={{ uid }}>
+            <input type="submit" value="フォロー">
+        </form>
+        {% endif %}
+        {% endif %}
+        </div>
+        <h2>Posts</h2>
+        {% for report in reports %}
+        <div>
+            <p><a href="/user/{{ report.user.name }}">{{ report.user.name }}</a><br>
+            {{ report.created_at }}<br>
+            <a href="/restaurant/{{report.restaurant_id}}">{{ report.restaurant.name }}</a><br>
+            {% for i in range(report.score|int) %}
+            <div style='color:#ffaf01c6; display: inline-block;'>
+            ★
+            </div>
+            {% endfor %}
+            {% for i in range(5 - report.score|int) %}
+            <div style='color:gray; display: inline-block;'>
+                ★
+            </div>
+            {% endfor %}
+            {{ report.contents }}</p>
+            {% if username == login_user %}
+            <div style="display:inline-flex">
+            <FORM action="/report/edit/" method="get">
+                <input type="hidden" name="id" value={{ report.id }}>
+                <INPUT type="submit" value="編集">
+            </FORM>
+            <form action="/report/delete/" method="post">
+                <input type="hidden" name="id" value={{ report.id }}>
+                <input type="submit" value="削除">
+            </form>
+            </div>
+            {% endif %}
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- <FORM>
+        <INPUT type="button" value="戻る" onClick="history.back()"><INPUT type="button" value="HOME" onclick="location.href='/'">
+    </FORM> -->
+    </body>
+</html>

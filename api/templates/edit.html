@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+            <p><a href="/user/{{ report.user.name }}">{{ report.user.name }}</a><br>
+            <a href="/restaurant/{{report.restaurant_id}}">{{ report.restaurant.name }}</a><br>
+            <form action='/report/edit/', method='post'>
+                <input type="hidden" name="id" value={{ report.id }}>
+                <p>
+                    評価：
+                    <select name="score">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </p>
+                <p>
+                    感想：<br>
+                    <textarea name="contents" rows="4" cols="40">{{ report.contents }}</textarea>
+                </p>
+                <p>
+                    <input type="submit" onclick="return send()" value="送信" id='send'><input type="reset" value="リセット">
+                </p>
+            </form>
+            <!-- {% for i in range(report.score|int) %}
+            ★
+            {% endfor %}
+            {% for i in range(5 - report.score|int) %}
+            ☆
+            {% endfor %}
+            {{ report.contents }}</p> -->
+            <hr>
+        </div>
+        <FORM>
+            <INPUT type="button" value="戻る" onClick="history.back()"><INPUT type="button" value="HOME" onclick="location.href='/'">
+        </FORM>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+<ul class "nav navbar-nav navbar-right">
+    {% if current_user.is_authenticated %}
+    <li><a href="/logout/">Log out</a></li>
+    <li><a href="/user/{{ username }}">{{ username }}</a></li>
+    <li><a href="/user/">All users</a></li>
+    <li><a href="/restaurant/">All restaurants</a></li>
+    <li><a href="/">Time line</a></li>
+    {% else %}
+    <li><a href="/login/">Log in</a></li>
+    <li><a href="/signup/">Sign up</a></li>
+    {% endif %}
+    <!-- <FORM>
+        <INPUT type="button" value="戻る" onClick="history.back()">
+    </FORM> -->
+</ul>

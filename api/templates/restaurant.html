@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <header>
+            <button onClick="history.back()">Back</button>
+            {% if current_user.is_authenticated %}
+            <button><a style='text-decoration: none' href="/">HOME</a></button>
+            <button><a style='text-decoration: none' href="/user/{{ current_user.name }}">{{ current_user.name }}</a></button>
+            <button><a style='text-decoration: none' href="/user/">All users</a></button>
+            <button><a style='text-decoration: none' href="/restaurant/">All restaurants</a></button>
+            <button><a style='text-decoration: none' href="/logout/">Log out</a></button>
+            {% else %}
+            <button><a style='text-decoration: none' href="/login/">Log in</a></button>
+            <button><a style='text-decoration: none' href="/signup/">Sign up</a></button>
+            {% endif %}
+        </header>
+        <div>
+            <h1 style='display: inline-block;'>{{ restaurant.name }}</h1>
+            <h2 style='display: inline-block;'>
+                {% for i in range(score|int) %}
+                <div style='color:#ffaf01c6; display: inline-block;'>
+                ★
+                </div>
+                {% endfor %}
+                {% for i in range(5 - score|int) %}
+                <div style='color:gray; display: inline-block;'>
+                    ★
+                </div>
+                {% endfor %}
+                {{ score }}
+            </h2>
+            <h2>{{ restaurant.contents }}</h2>
+            <hr>
+        </div>
+        {% for report in reports %}
+        <div>
+            <a href="/user/{{ report.user.name }}">{{ report.user.name }}</a><br>
+                {{ report.created_at }}<br>
+                <!-- <a href="/restaurant/{{report.restaurant_id}}">{{ report.restaurant.name }}</a><br> -->
+            {% for i in range(report.score|int) %}
+            <div style='color:#ffaf01c6; display: inline-block;'>
+            ★
+            </div>
+            {% endfor %}
+            {% for i in range(5 - report.score|int) %}
+            <div style='color:gray; display: inline-block;'>
+                ★
+            </div>
+            {% endfor %}
+            
+            {{ report.contents }}
+            <hr>
+        </div>
+        {% endfor %}
+        <form action="/report/" method="post">
+            <input type="hidden" name="restaurant_id" value={{ restaurant.id }}>
+            <p>
+                評価：
+                <select name="score">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </p>
+            <p>
+                感想：<br>
+                <textarea name="contents" rows="4" cols="40"></textarea>
+            </p>
+            <p>
+                <input type="submit" onclick="return send()" value="送信" id='send'><input type="reset" value="リセット">
+            </p>
+        </form>
+        <!-- <FORM>
+            <INPUT type="button" value="戻る" onClick="history.back()"><INPUT type="button" value="HOME" onclick="location.href='/'">
+        </FORM> -->
+    </body>
+</html>

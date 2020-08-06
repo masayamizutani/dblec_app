@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <header>
+            <button onClick="history.back()">Back</button>
+            {% if current_user.is_authenticated %}
+            <button><a style='text-decoration: none' href="/">HOME</a></button>
+            <button><a style='text-decoration: none' href="/user/{{ current_user.name }}">{{ current_user.name }}</a></button>
+            <button><a style='text-decoration: none' href="/user/">All users</a></button>
+            <button><a style='text-decoration: none' href="/restaurant/">All restaurants</a></button>
+            <button><a style='text-decoration: none' href="/logout/">Log out</a></button>
+            {% else %}
+            <button><a style='text-decoration: none' href="/login/">Log in</a></button>
+            <button><a style='text-decoration: none' href="/signup/">Sign up</a></button>
+            {% endif %}
+        </header>
+        <h1>All Users</h1>
+        {% for user in users %}
+        <div>
+            <p><a href="/user/{{ user.name }}">{{ user.name }}</a><br>
+            </p>
+        </div>
+        {% endfor %}
+        <!-- <FORM>
+            <INPUT type="button" value="戻る" onClick="history.back()"><INPUT type="button" value="HOME" onclick="location.href='/'">
+        </FORM> -->
+    </body>
+</html>
