@@ -1,0 +1,41 @@
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        {% if current_user.is_authenticated %}
+            <a href="/" class="navbar-brand">Home</a>
+        {% if username %}
+            <a style='text-decoration: none' href="/user/{{ username }}">{{ username }}</a>
+        {% else %}
+            <a style='text-decoration: none' href="/user/{{ current_user.name }}">{{ current_user.name }}</a>
+        {% endif %}
+            <a style='text-decoration: none' href="/user/">All users</a>
+            <a style='text-decoration: none' href="/restaurant/">All restaurants</a>
+            <a style='text-decoration: none' href="/logout/">Log out</a>
+        {% else %}
+            <a style='text-decoration: none' href="/login/">Log in</a>
+            <a style='text-decoration: none' href="/signup/">Sign up</a>
+        {% endif %}
+    </nav>
+    <!-- <button onClick="history.back()">Back</button>
+    {% if current_user.is_authenticated %}
+    <button><a style='text-decoration: none' href="/">HOME</a></button>
+    {% if username %}
+        <button><a style='text-decoration: none' href="/user/{{ username }}">{{ username }}</a></button>
+    {% else %}
+        <button><a style='text-decoration: none' href="/user/{{ current_user.name }}">{{ current_user.name }}</a></button>
+    {% endif %}
+    <button><a style='text-decoration: none' href="/user/">All users</a></button>
+    <button><a style='text-decoration: none' href="/restaurant/">All restaurants</a></button>
+    <button><a style='text-decoration: none' href="/logout/">Log out</a></button>
+    {% else %}
+    <button><a style='text-decoration: none' href="/login/">Log in</a></button>
+    <button><a style='text-decoration: none' href="/signup/">Sign up</a></button>
+    {% endif %} -->
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>

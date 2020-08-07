@@ -277,7 +277,9 @@ def showRestaurantReports(restaurant_id):
     report, score = Report.getFilteredReportByIds(uids, restaurant_id)
     # report_schema = ReportSchema(many=True)
     report_schema = ReportJoinSchema(many=True)
-    # print(report_schema.dump(report))
+    
+    folium_map = restaurant[0].showMap()
+    folium_map.save('api/templates/map.html')
     return render_template("restaurant.html", restaurant=restaurant_schema.dump(restaurant)[0], reports=report_schema.dump(report), score=score)
 
 @user_router.route('/follow/', methods=['POST'])
